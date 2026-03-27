@@ -1,0 +1,510 @@
+@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&display=swap');
+
+:root {
+  --primary: #357d2c;
+  --primary-dark: #1e5c38;
+  --accent: #f4a261;
+  --glass: rgba(255, 255, 255, 0.12);
+  --glass-border: rgba(255, 255, 255, 0.25);
+  --text: #ffffff;
+  --text-soft: rgba(255, 255, 255, 0.9);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', system-ui, sans-serif;
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+.stylo {
+  font-family: "Press Start 2P", system-ui;
+}
+
+/* Background Video - Stable on all screens */
+#bg-video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+  object-fit: cover;
+  object-position: center;
+}
+
+.video-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.52);
+  z-index: -1;
+}
+
+/* ==================== HEADER ==================== */
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.logo-image {
+  height: 65px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+}
+
+.logo-image:hover {
+  transform: scale(1.08);
+}
+
+.logo-text {
+  font-size: 2.05rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.visitor-count {
+  background: rgba(255,255,255,0.18);
+  padding: 0.55rem 1.3rem;
+  border-radius: 50px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.15);
+  white-space: nowrap;
+  font-size: 0.95rem;
+}
+
+/* ==================== MAIN NAV ==================== */
+.main-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  list-style: none;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+/* FADE: nav links fade in/out */
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0.78;
+  transition: opacity 0.35s ease, background 0.35s ease, border-color 0.35s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  opacity: 1;
+  background: rgba(255,255,255,0.28);
+  border-color: #a8e6a1;
+}
+
+/* ==================== DROPDOWN ==================== */
+.main-nav li {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: block;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(20, 40, 20, 0.92);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  min-width: 180px;
+  list-style: none;
+  padding: 0.5rem 0;
+  z-index: 999;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+
+  /* Fade in/out */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateX(-50%) translateY(-6px);
+}
+
+.main-nav li:hover .dropdown-menu,
+.main-nav li:focus-within .dropdown-menu {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 0.6rem 1.2rem;
+  color: white;
+  text-decoration: none;
+  font-size: 0.93rem;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  opacity: 0.82;
+  transition: opacity 0.25s ease, background 0.25s ease;
+  white-space: nowrap;
+}
+
+.dropdown-menu li a:hover {
+  opacity: 1;
+  background: rgba(255,255,255,0.15);
+}
+
+/* Arrow indicator on Games link */
+.has-dropdown > a::after {
+  content: ' ▾';
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+/* Sub Navigation */
+.sub-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+  list-style: none;
+  margin: 2rem 0 3rem 0;
+}
+
+.sub-nav a {
+  color: white;
+  padding: 0.7rem 1.4rem;
+  border-radius: 30px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  text-decoration: none;
+  opacity: 0.78;
+  transition: opacity 0.35s ease, background 0.35s ease, border-color 0.35s ease;
+}
+
+.sub-nav a.active,
+.sub-nav a:hover {
+  opacity: 1;
+  background: rgba(255,255,255,0.3);
+  border-color: #a8e6a1;
+}
+
+/* ==================== MAIN CONTENT ==================== */
+main {
+  max-width: 1280px;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  padding: 8rem 2rem 6rem;
+  background: transparent;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 3.6rem;
+  margin-bottom: 1.2rem;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+}
+
+.hero-content p {
+  font-size: 1.35rem;
+  max-width: 780px;
+  margin: 0 auto 2rem;
+  opacity: 0.95;
+}
+
+.cta-button {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  padding: 1rem 2.2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+}
+
+/* Games Section */
+.games-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.4rem;
+}
+
+.game-category {
+  margin-bottom: 5rem;
+}
+
+.game-category h3 {
+  margin-bottom: 1.5rem;
+  color: white;
+  font-size: 1.8rem;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  gap: 2.2rem;
+  margin-top: 2.5rem;
+}
+
+/* ==================== CATEGORY-SPECIFIC CARD STYLES ==================== */
+
+#indoor .game-card h3   { background: linear-gradient(to right, #4c7903, #4c7903); }
+#outdoor .game-card h3  { background: linear-gradient(to right, #13550b, #0c540e); }
+#kids .game-card h3     { background: linear-gradient(to right, #05a570, #05a570); }
+#males .game-card h3    { background: linear-gradient(to right, #4c776e, #4c776e); }
+#females .game-card h3  { background: linear-gradient(to right, #5a8454, #5a8454); }
+#family .game-card h3   { background: linear-gradient(to right, #232c25, #232c25); }
+
+.game-card {
+  background: rgba(255,255,255,0.95);
+  color: #222;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transition: all 0.4s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+}
+
+.game-info {
+  padding: 1.6rem;
+}
+
+.info-item {
+  margin: 1rem 0;
+  font-size: 1.02rem;
+}
+
+.info-label {
+  font-weight: 600;
+  color: var(--primary);
+  display: inline-block;
+  width: 145px;
+}
+
+.video-wrapper {
+  margin-top: 1.2rem;
+}
+
+.download-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.55rem 1.1rem;
+  background: var(--primary);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.download-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.video-wrapper iframe,
+.video-wrapper video {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+/* Other Sections */
+#itineraries, #about, #contact {
+  background: var(--glass);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+.contact-info p {
+  font-size: 1.15rem;
+  margin: 1rem 0;
+}
+
+.map-container {
+  margin-top: 2rem;
+}
+
+/* Ticker */
+.ticker {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  color: #ddd;
+  padding: 0.9rem 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.ticker-content {
+  display: inline-block;
+  animation: ticker-scroll 58s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+@media (max-width: 992px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .logo {
+    justify-content: center;
+  }
+
+  /* Dropdown opens downward and centered on mobile */
+  .dropdown-menu {
+    left: 50%;
+    transform: translateX(-50%) translateY(-6px);
+  }
+
+  .main-nav li:hover .dropdown-menu,
+  .main-nav li:focus-within .dropdown-menu {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    padding: 1rem 1.2rem;
+  }
+  
+  .logo-image {
+    height: 55px;
+  }
+  
+  .logo-text {
+    font-size: 1.75rem;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .main-nav a {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    padding: 14px 20px;
+    font-size: 1rem;
+    border-radius: 14px;
+  }
+
+  .sub-nav {
+    margin-top: 2.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .sub-nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .sub-nav a {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    padding: 13px 20px;
+    font-size: 1rem;
+    border-radius: 14px;
+  }
+
+  .game-grid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+
+  .hero-section {
+    padding: 5rem 1.5rem 4rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.6rem;
+  }
+
+  /* On mobile, dropdown replaces hover with tap (handled by JS) */
+  .dropdown-menu {
+    min-width: 220px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+  .logo-text {
+    font-size: 1.65rem;
+  }
+  
+  .main-nav a,
+  .sub-nav a {
+    padding: 12px 18px;
+    font-size: 0.97rem;
+  }
+}

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PlayfulOutings – Picnic Games & Getaways</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="videos/Logo.jpg" type="image/x-icon">
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video 
+  id="bg-video" 
+  autoplay 
+  muted 
+  loop 
+  playsinline 
+  poster="videos/bg-poster.png"
+  preload="auto"
+  disablepictureinpicture
+  disableremoteplayback>
+  <source src="videos/bg-video.mp4" type="video/mp4">
+</video>
+<div class="video-overlay"></div>
+
+  <!-- Top Navigation -->
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <img src="videos/logo.jpg" alt="Playful Outings Logo" class="logo-image">
+        <span class="logo-text">Playful Outings</span>
+      </div>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li class="has-dropdown">
+            <a href="#games" class="nav-link">Games</a>
+            <ul class="dropdown-menu">
+              <li><a href="#indoor" class="dropdown-link">Indoor</a></li>
+              <li><a href="#outdoor" class="dropdown-link">Outdoor</a></li>
+              <li><a href="#kids" class="dropdown-link">Kids</a></li>
+              <li><a href="#males" class="dropdown-link">Males</a></li>
+              <li><a href="#females" class="dropdown-link">Females</a></li>
+              <li><a href="#family" class="dropdown-link">Family</a></li>
+            </ul>
+          </li>
+          <li><a href="#itineraries" class="nav-link">Itineraries</a></li>
+          <li><a href="#about" class="nav-link">About Us</a></li>
+          <li><a href="#contact" class="nav-link">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="visitor-count">Visitors: <span id="visitorCount">0</span></div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-section">
+      <div class="hero-content">
+        <h1 class="stylo">Welcome to Playful Outings</h1>
+        <p>Discover fun indoor & outdoor picnic games for kids, adults, couples, and families.<br>Make every outing memorable with simple plans and great games.</p>
+        <a href="#games" class="cta-button">Explore Games</a>
+      </div>
+    </section>
+
+    <!-- GAMES SECTION with Sub Navigation -->
+    <section id="games" class="games-section">
+      <h2>Our Games</h2>
+      
+      <!-- Sub Navigation -->
+      <div class="sub-nav">
+        <ul>
+          <li><a href="#indoor" class="sub-link active">Indoor</a></li>
+          <li><a href="#outdoor" class="sub-link">Outdoor</a></li>
+          <li><a href="#kids" class="sub-link">Kids</a></li>
+          <li><a href="#males" class="sub-link">Males</a></li>
+          <li><a href="#females" class="sub-link">Females</a></li>
+          <li><a href="#family" class="sub-link">Family</a></li>
+        </ul>
+      </div>
+
+      <!-- Indoor Games -->
+      <div id="indoor" class="game-category">
+        <h3>Indoor Games</h3>
+        <div class="game-grid">
+          <div class="game-card">
+            <h3>Charades</h3>
+            <div class="game-info">
+              <div class="info-item"><span class="info-label">Materials:</span> None (or paper & pen)</div>
+              <div class="info-item"><span class="info-label">Time:</span> 20–60 min</div>
+              <div class="info-item"><span class="info-label">How to play:</span> One person acts out a word/phrase silently while the team guesses.</div>
+              <div class="video-wrapper">
+                <iframe width="100%" height="215" src="https://www.youtube.com/embed/lccMJQA51E8" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <a href="game_docs/Indoor_Charades.docx" download class="download-btn">&#128196; Download Instructions (.docx)</a>
+            
+            </div>
+          </div>
+          <div class="game-card">
+            <h3>Two Truths and a Lie</h3>
+            <div class="game-info">
+              <div class="info-item"><span class="info-label">Materials:</span> None</div>
+              <div class="info-item"><span class="info-label">Time:</span> 15–40 min</div>
+              <div class="info-item"><span class="info-label">How to play:</span> Share 3 statements (2 true, 1 false). Others guess the lie.</div>
+              <div class="video-wrapper">
+                <iframe width="100%" height="215" src="https://www.youtube.com/embed/hMLHsN4DKlc" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <a href="game_docs/Indoor_Two_Truths_and_a_Lie.docx" download class="download-btn">&#128196; Download Instructions (.docx)</a>
+            
+            </div>
+          </div>
+          <div class="game-card">
+            <h3>Would You Rather</h3>
+            <div class="game-info">
+              <div class="info-item"><span class="info-label">Materials:</span> None</div>
+              <div class="info-item"><span class="info-label">Time:</span> 15–40 min</div>
+              <div class="info-item"><span class="info-label">How to play:</span> Players take turns asking fun "Would you rather..." questions.</div>
+              <div class="video-wrapper">
+                <iframe width="100%" height="215" src="https://www.youtube.com/embed/Cf_PbUAK4OA" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <a href="game_docs/Indoor_Would_You_Rather.docx" download class="download-btn">&#128196; Download Instructions (.docx)</a>
+            
+            </div>
+          </div>
+          <div class="game-card">
+            <h3>Pictionary</h3>
+            <div class="game-info">
+              <div class="info-item"><span class="info-label">Materials:</span> Paper and pen</div>
+              <div class="info-item"><span class="info-label">Time:</span> 20–45 min</div>
+              <div class="info-item"><span class="info-label">How to play:</span> One person draws while the team guesses. Use picnic-themed words.</div>
+              <div class="video-wrapper">
+                <iframe width="100%" height="215" src="https://www.youtube.com/embed/CXUWdmZv-cg" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <a href="game_docs/Indoor_Pictionary.docx" download class="download-btn">&#128196; Download Instructions (.docx)</a>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Outdoor Games -->
+      <div id="outdoor" class="game-category">
+        <h3>Outdoor Games</h3>
+        <div class="game-grid">
+          <div class="game-card">
+            <h3>Sack Race</h3>
+            <div class="game-info">
+              <div class="info-item"><span class="info-label">Materials:</span> Sacks or pillow cases</div>
+              <div class="info-item"><span class="info-label">Time:</span> 10–30 min</div>
+              <div class="info-item"><span class="info-label">How to play:</span> Jump from start to finish inside a sack. Relay format works best.</div>
+              <div class="video-wrapper">
+                <iframe width="100%" height="215" src="https://www.youtube.com/embed/IA_sjc9dfKs" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <a href="game_docs/Outdoor_Sack_Race.docx" download class="download-btn">&#128196; Download Instructions (.docx)</a>
+            
+            </div>
+          </div>
+          <div class="game-card">
+            <h3>Water Balloon Toss</h3>
+            <div class="game-info">
+              <div class="info-item"><span class="info-label">Materials:</span> Water balloons</div>
+              <div class="info-item"><span class="info-label">Time:</span> 15–25 min</div>
+              <div class="info-item"><span class="info-label">How to play:</span> Pairs toss balloon, step back after each catch. Last dry pair wins.</div>
+              <div class="video-wrapper">
+                <iframe width="100%" height="215" src="https://www.youtube.com/embed/PEUxJkA-Rms" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <a href="game_docs/Outdoor_Water_Balloon_Toss.docx" download class="download-btn">&#128196; Download Instructions (.docx)</a>
+            
+            </div>
+          </div>
+          <div class="game-card">
+            <h3>Red Light, Green Light</h3>
+            <div class="game-info">
+              <div class="info-item"><span class="info-label">Materials:</span> None</div>
+              <div class="info-item"><span class="info-label">Time:</span> 10–20 min</div>
+              <div class="info-item"><span class="info-label">How to play:</span> Run on "Green Light", freeze on "Red Light". Last to reach wins.</div>
+              <div class="video-wrapper">
+                <iframe width="100%" height="215" src="https://www.youtube.com/embed/4vPep4MB_8A" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <a href="game_docs/Outdoor_Red_Light_Green_Light.docx" download class="download-btn">&#128196; Download Instructions (.docx)</a>
+            
+            </div>
+          </div>
+          <div class="game-card">
+            <h3>Freeze Tag</h3>
+            <div class="game-info">
+              <div class="info-item"><span class="info-label">Materials:</span> None</div>
+              <div class="info-item"><span class="info-label">Time:</span> 15–25 min</div>
+              <div class="info-item"><span class="info-label">How to play:</span> "It" tags players to freeze them. Unfreeze by crawling between legs.</div>
+              <div class="video-wrapper">
+                <iframe width="100%" height="215" src="https://www.youtube.com/embed/nYzZdKVl3bA" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <a href="game_docs/Outdoor_Freeze_Tag.docx" download class="download-btn">&#128196; Download Instructions (.docx)</a>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kids Games -->
+      <div id="kids" class="game-category">
+        <h3>Games for Kids</h3>
+        <div class="game-grid">
+          <div class="game-card">
+            <h3>Simon Says</h3>
+            <div class="game-info">
+              <div class="info-item"><span class="info-label">Materials:</span> None</div>
+              <div class="info-item"><span class="info-label">Time:</span> 10–30 min</div>
+              <div class="info-item"><span class="info-label">How to play:</span> Only follow commands that start with "Simon says".</div>
+              <div class="video-wrapper">
+                <iframe width="100%" height="215" src="https://www.youtube.com/embed/oI0MlnQq7-o" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <a href="game_docs/Kids_Simon_Says.docx" download class="download-btn">&#128196; Download Instructions (.docx)</a>
+            
+            </div>
+          </div>
+          <div class="game-card">
+            <h3>Musical Statues</h3>
+            <div class="game-info">
+              <div class="info-item"><span class="info-label">Materials:</span> Music player</div>
+              <div class="info-item"><span class="info-label">Time:</span> 10–20 min</div>
+              <div class="info-item"><span class="info-label">How to play:</span> Dance when music plays, freeze when it stops.</div>
+              <div class="video-wrapper">
+                <iframe width="100%" height="215" src="https://www.youtube.com/embed/QJbvpcJSkbI" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <a href="game_docs/Kids_Musical_Statues.docx" download class="download-btn">&#128196; Download Instructions (.docx)</a>
+            
+            </div>
+          </div>
+          <div class="game-card">
+            <h3>Duck Duck Goose</h3>
+            <div class="game-info">
+              <div class="info-item"><span class="info-label">Materials:</span> None</div>
+              <div class="info-item"><span class="info-label">Time:</span> 15–25 min</div>
+              <div class="info-item"><span class="info-label">How to play:</span> Sit in circle. Tap heads saying "Duck" or "Goose". Goose chases.</div>
+              <div class="video-wrapper">
+                <iframe width="100%" height="215" src="https://www.youtube.com/embed/gWNZMziSl4k" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <a href="game_docs/Kids_Duck_Duck_Goose.docx" download class="download-btn">&#128196; Download Instructions (.docx)</a>
+            
+            </div>
+          </div>
+          <div class="game-card">
+            <h3>Scavenger Hunt</h3>
+            <div class="game-info">
+              <div class="info-item"><span class="info-label">Materials:</span> List of items</div>
+              <div class="info-item"><span class="info-label">Time:</span> 20–30 min</div>
+              <div class="info-item"><span class="info-label">How to play:</span> Find listed natural items first to win.</div>
+              <div class="video-wrapper">
+                <iframe width="100%" height="215" src="https://www.youtube.com/embed/dtOzdyPqRms" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <a href="game_docs/Kids_Scavenger_Hunt.docx" download class="download-btn">&#128196; Download Instructions (.docx)</a>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Males -->
+      <div id="males" class="game-category">
+        <h3>Games for Males / Teens</h3>
+        <div class="game-grid">
+          <div class="game-card">
+            <h3>Frisbee Golf</h3>
+            <div class="game-info">
+              <div class="info-item"><span class="info-label">Materials:</span> Frisbee, targets</div>
+              <div class="info-item"><span class="info-label">Time:</span> 20–45 min</div>
+              <div class="info-item"><span class="info-label">How to play:</span> Throw frisbee to hit targets with fewest throws.</div>
+              <div class="video-wrapper">
+                <iframe width="100%" height="215" src="https://www.youtube.com/embed/WJRNK0eKuNw" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <a href="game_docs/Males_Frisbee_Golf.docx" download class="download-btn">&#128196; Download Instructions (.docx)</a>
+            
+            </div>
+          </div>
+          <div class="game-card">
+            <h3>Arm Wrestling</h3>
+            <div class="game-info">
+              <div class="info-item"><span class="info-label">Materials:</span> Table or flat surface</div>
+              <div class="info-item"><span class="info-label">Time:</span> 5–15 min</div>
+              <div class="info-item"><span class="info-label">How to play:</span> Grip hands and try to pin opponent's arm.</div>
+              <div class="video-wrapper">
+                <iframe width="100%" height="215" src="https://www.youtube.com/embed/xRk6YxZKynM" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <a href="game_docs/Males_Arm_Wrestling.docx" download class="download-btn">&#128196; Download Instructions (.docx)</a>
+            
+            </div>
+          </div>
+          <div class="game-card">
+            <h3>Frisbee Distance Throw</h3>
+            <div class="game-info">
+              <div class="info-item"><span class="info-label">Materials:</span> Frisbee</div>
+              <div class="info-item"><span class="info-label">Time:</span> 15–25 min</div>
+              <div class="info-item"><span class="info-label">How to play:</span> Compete for farthest throw.</div>
+              <div class="video-wrapper">
+                <iframe width="100%" height="215" src="https://www.youtube.com/embed/fScIX4mkKdo" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <a href="game_docs/Males_Frisbee_Distance_Throw.docx" download class="download-btn">&#128196; Download Instructions (.docx)</a>
+            
+            </div>
+          </div>
+          <div class="game-card">
+            <h3>Push-up Challenge</h3>
+            <div class="game-info">
+              <div class="info-item"><span class="info-label">Materials:</span> None</div>
+              <div class="info-item"><span class="info-label">Time:</span> 10–20 min</div>
+              <div class="info-item"><span class="info-label">How to play:</span> See who can do the most push-ups in 1 minute.</div>
+              <div class="video-wrapper">
+                <iframe width="100%" height="215" src="https://www.youtube.com/embed/UIcct-7b6oE" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <a href="game_docs/Males_Push_up_Challenge.docx" download class="download-btn">&#128196; Download Instructions (.docx)</a>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Females -->
+      <div id="females" class="game-category">
+        <h3>Games for Females / Ladies</h3>
+        <div class="game-grid">
+          <div class="game-card">
+            <h3>Picnic Name Game</h3>
+            <div class="game-info">
+              <div class="info-item"><span class="info-label">Materials:</span> None</div>
+              <div class="info-item"><span class="info-label">Time:</span> 15–30 min</div>
+              <div class="info-item"><span class="info-label">How to play:</span> Say your name + adjective/food starting with same letter.</div>
+              <div class="video-wrapper">
+                <iframe width="100%" height="215" src="https://www.youtube.com/embed/lccMJQA51E8" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <a href="game_docs/Females_Picnic_Name_Game.docx" download class="download-btn">&#128196; Download Instructions (.docx)</a>
+            
+            </div>
+          </div>
+          <div class="game-card">
+            <h3>Story Chain</h3>
+            <div class="game-info">
+              <div class="info-item"><span class="info-label">Materials:</span> None</div>
+              <div class="info-item"><span class="info-label">Time:</span> 15–30 min</div>
+              <div class="info-item"><span class="info-label">How to play:</span> One starts a story, each adds one sentence.</div>
+              <div class="video-wrapper">
+                <iframe width="100%" height="215" src="https://www.youtube.com/embed/-vuLrFtelVc" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <a href="game_docs/Females_Story_Chain.docx" download class="download-btn">&#128196; Download Instructions (.docx)</a>
+            
+            </div>
+          </div>
+          <div class="game-card">
+            <h3>Relay Race (Fun Twist)</h3>
+            <div class="game-info">
+              <div class="info-item"><span class="info-label">Materials:</span> Small objects</div>
+              <div class="info-item"><span class="info-label">Time:</span> 15–25 min</div>
+              <div class="info-item"><span class="info-label">How to play:</span> Teams pass items while doing fun tasks.</div>
+              <div class="video-wrapper">
+                <iframe width="100%" height="215" src="https://www.youtube.com/embed/J99I9wIRQKo" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <a href="game_docs/Females_Relay_Race_Fun_Twist.docx" download class="download-btn">&#128196; Download Instructions (.docx)</a>
+            
+            </div>
+          </div>
+          <div class="game-card">
+            <h3>Charades (Themed)</h3>
+            <div class="game-info">
+              <div class="info-item"><span class="info-label">Materials:</span> None</div>
+              <div class="info-item"><span class="info-label">Time:</span> 20–35 min</div>
+              <div class="info-item"><span class="info-label">How to play:</span> Act out movie titles, songs, or food items.</div>
+              <div class="video-wrapper">
+                <iframe width="100%" height="215" src="https://www.youtube.com/embed/lccMJQA51E8" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <a href="game_docs/Females_Charades_Themed.docx" download class="download-btn">&#128196; Download Instructions (.docx)</a>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Family Games -->
+      <div id="family" class="game-category">
+        <h3>Family Games</h3>
+        <div class="game-grid">
+          <div class="game-card">
+            <h3>Tug of War</h3>
+            <div class="game-info">
+              <div class="info-item"><span class="info-label">Materials:</span> Rope or strong cloth</div>
+              <div class="info-item"><span class="info-label">Time:</span> 10–20 min</div>
+              <div class="info-item"><span class="info-label">How to play:</span> Two teams pull rope. First to pull other over line wins.</div>
+              <div class="video-wrapper">
+                <iframe width="100%" height="215" src="https://www.youtube.com/embed/C2Vs1elFVVU" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <a href="game_docs/Family_Tug_of_War.docx" download class="download-btn">&#128196; Download Instructions (.docx)</a>
+            
+            </div>
+          </div>
+          <div class="game-card">
+            <h3>Three-Legged Race</h3>
+            <div class="game-info">
+              <div class="info-item"><span class="info-label">Materials:</span> Scarf or rope</div>
+              <div class="info-item"><span class="info-label">Time:</span> 10–20 min</div>
+              <div class="info-item"><span class="info-label">How to play:</span> Pairs tie legs together and race.</div>
+              <div class="video-wrapper">
+                <iframe width="100%" height="215" src="https://www.youtube.com/embed/VtScuwFwRRs" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <a href="game_docs/Family_Three_Legged_Race.docx" download class="download-btn">&#128196; Download Instructions (.docx)</a>
+            
+            </div>
+          </div>
+          <div class="game-card">
+            <h3>Family Trivia</h3>
+            <div class="game-info">
+              <div class="info-item"><span class="info-label">Materials:</span> None</div>
+              <div class="info-item"><span class="info-label">Time:</span> 15–30 min</div>
+              <div class="info-item"><span class="info-label">How to play:</span> Ask fun questions about each family member.</div>
+              <div class="video-wrapper">
+                <iframe width="100%" height="215" src="https://www.youtube.com/embed/3ShqXh5tI1s" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <a href="game_docs/Family_Family_Trivia.docx" download class="download-btn">&#128196; Download Instructions (.docx)</a>
+            
+            </div>
+          </div>
+          <div class="game-card">
+            <h3>Capture the Flag</h3>
+            <div class="game-info">
+              <div class="info-item"><span class="info-label">Materials:</span> Two flags or cloths</div>
+              <div class="info-item"><span class="info-label">Time:</span> 20–40 min</div>
+              <div class="info-item"><span class="info-label">How to play:</span> Teams try to capture the opponent's flag.</div>
+              <div class="video-wrapper">
+                <iframe width="100%" height="215" src="https://www.youtube.com/embed/AwQKf5Mn5Zc" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <a href="game_docs/Family_Capture_the_Flag.docx" download class="download-btn">&#128196; Download Instructions (.docx)</a>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ITINERARIES -->
+    <section id="itineraries">
+      <h2>Popular Short Getaway Itineraries</h2>
+      <ul>
+        <li><strong>Jabi Lake Day (Abuja)</strong> – Morning picnic, outdoor games, boat ride, lunch by the lake, evening return.</li>
+        <li><strong>Millennium Park Picnic</strong> – Games in open space, family fun, walk around the river.</li>
+        <li><strong>Usuma Dam Outing</strong> – Light hike, picnic, outdoor games with scenic views.</li>
+      </ul>
+      <p style="margin-top:1.5rem;">Suggested spots: Jabi Lake, Millennium Park, Usuma Dam, Children's Park & Zoo, Gurara Falls.</p>
+    </section>
+
+    <!-- ABOUT US -->
+    <section id="about">
+      <h2>About Us</h2>
+      <p>PlayfulOutings was created with one simple mission: to make every picnic and outdoor gathering more joyful and memorable. Based in Abuja, Nigeria, we believe great memories are made when families and friends play together in nature.</p>
+      <p>We curate fun, easy-to-play games for all ages and create simple getaway plans so you can focus on what matters most — spending quality time with loved ones.</p>
+    </section>
+
+    <!-- CONTACT US -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Have questions, suggestions, or want to share your favorite picnic game? We'd love to hear from you!</p>
+      
+      <div class="contact-info">
+        <p><strong>Email:</strong> playfuloutings@gmail.com</p>
+        <p><strong>Phone:</strong> +234 805 570 0661 (Abuja-based team)</p>
+        <p><strong>Location:</strong> <span id="userLocation">Detecting your location...</span></p>
+      </div>
+
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7411.620815919978!2d7.497798!3d9.0711333!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0a4b03693325%3A0x2e0791297a581241!2sMillennium%20Park!5e1!3m2!1sen!2sng!4v1774222972990!5m2!1sen!2sng" 
+          width="100%" height="450" style="border:0; border-radius: 16px;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+
+      <form style="margin-top: 2rem; max-width: 500px;">
+        <label for="name">Your Name:</label><br>
+          <input type="text" id="name" name="name" style="width:100%; padding:0.5rem; margin:0.5rem 0;"><br>
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message" rows="4" style="width:100%; padding:0.5rem; margin:0.5rem 0;"></textarea><br>
+    <button type="button" onclick="alert('Thanks! Your message would be sent (demo).');" style="background:var(--primary); color:white; padding:0.8rem 1.5rem; border:none; border-radius:6px; cursor:pointer;">Send Message</button>
+  </form>
+    </section>
+  </main>
+
+  <!-- Ticker -->
+  <div class="ti
