@@ -109,3 +109,19 @@ if (navigator.geolocation) {
 
 setInterval(updateTicker, 1000);
 updateTicker();
+
+// ==================== YOUTUBE LAZY LOAD ====================
+document.querySelectorAll('.yt-lazy').forEach(wrapper => {
+  wrapper.addEventListener('click', function () {
+    const videoId = this.getAttribute('data-videoid');
+    const iframe = document.createElement('iframe');
+    iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1`);
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('allowfullscreen', '');
+    iframe.setAttribute('allow', 'autoplay; encrypted-media');
+    // Remove thumbnail and play button, insert iframe
+    this.innerHTML = '';
+    this.appendChild(iframe);
+  });
+});
+// ==================== END YOUTUBE LAZY LOAD ====================
