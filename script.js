@@ -1,10 +1,12 @@
-// Visitor Counter
+// ==================== VISITOR COUNTER ====================
 let visits = localStorage.getItem("playfuloutings_visits") || 0;
-visits = Number(visits) + 1;
+visits = Number(visits);
+if (isNaN(visits)) visits = 0; // Guard against corrupted localStorage
+visits += 1;
 localStorage.setItem("playfuloutings_visits", visits);
 document.getElementById("visitorCount").textContent = visits.toLocaleString();
 
-// Smooth Scroll for all internal links
+// ==================== SMOOTH SCROLL ====================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     const targetId = this.getAttribute('href').substring(1);
@@ -16,7 +18,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Active link highlighting on scroll
+// ==================== ACTIVE NAV ON SCROLL ====================
 window.addEventListener('scroll', () => {
   let current = '';
   const sections = document.querySelectorAll('section');
@@ -34,11 +36,15 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// GAME CATEGORY FILTER 
+// ==================== GAME CATEGORY FILTER ====================
 const subLinks = document.querySelectorAll('.sub-link');
 const gameCategories = document.querySelectorAll('.game-category');
 
 function showCategory(selectedId) {
+  // Guard: only act if the category actually exists
+  const target = document.getElementById(selectedId);
+  if (!target || !target.classList.contains('game-category')) return;
+
   gameCategories.forEach(cat => {
     cat.style.display = (cat.id === selectedId) ? 'block' : 'none';
   });
@@ -54,37 +60,40 @@ function showCategory(selectedId) {
 gameCategories.forEach(cat => { cat.style.display = 'none'; });
 showCategory('indoor');
 
-
+// Sub-nav clicks
 subLinks.forEach(link => {
   link.addEventListener('click', function(e) {
     e.preventDefault();
     const targetId = this.getAttribute('href').substring(1);
     showCategory(targetId);
-    document.getElementById('games').scrollIntoView({ behavior: 'smooth' });
+    const gamesSection = document.getElementById('games');
+    if (gamesSection) gamesSection.scrollIntoView({ behavior: 'smooth' });
   });
 });
 
-
+// Dropdown link clicks
 document.querySelectorAll('.dropdown-link').forEach(link => {
   link.addEventListener('click', function(e) {
     e.preventDefault();
     const targetId = this.getAttribute('href').substring(1);
     showCategory(targetId);
-    document.getElementById('games').scrollIntoView({ behavior: 'smooth' });
+    const gamesSection = document.getElementById('games');
+    if (gamesSection) gamesSection.scrollIntoView({ behavior: 'smooth' });
   });
 });
-// END FILTER 
+// ==================== END FILTER ====================
 
-// Ticker
+// ==================== TICKER ====================
 const tickerEl = document.getElementById("tickerContent");
 const locEl = document.getElementById("userLocation");
 
 function updateTicker() {
+  if (!tickerEl || !locEl) return; // Guard: elements must exist
   const now = new Date();
   const dateStr = now.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
   const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   let locationText = locEl.textContent.trim();
-  if (locationText === "Detecting...") locationText = "Location: detecting...";
+  if (!locationText || locationText === "Detecting your location...") locationText = "Location: detecting...";
   else if (locationText.includes("denied") || locationText.includes("not available")) locationText = "Location: unavailable";
   else locationText = `Location: ${locationText}`;
   const baseMessage = `Today: ${dateStr} • ${timeStr} • ${locationText}  •  Enjoy your outing!  •  Games create memories  •  Picnic with friends & family!  •  Try a new game today!  •  `;
@@ -94,33 +103,36 @@ function updateTicker() {
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(
     pos => {
-      locEl.textContent = `Lat: ${pos.coords.latitude.toFixed(4)}, Lon: ${pos.coords.longitude.toFixed(4)}`;
+      if (locEl) locEl.textContent = `Lat: ${pos.coords.latitude.toFixed(4)}, Lon: ${pos.coords.longitude.toFixed(4)}`;
       updateTicker();
     },
     () => {
-      locEl.textContent = "Location access denied";
+      if (locEl) locEl.textContent = "Location access denied";
       updateTicker();
     }
   );
 } else {
-  locEl.textContent = "Geolocation not available";
+  if (locEl) locEl.textContent = "Geolocation not available";
   updateTicker();
 }
 
 setInterval(updateTicker, 1000);
 updateTicker();
 
-//  YOUTUBE LAZY LOAD 
+// ==================== YOUTUBE LAZY LOAD ====================
 document.querySelectorAll('.yt-lazy').forEach(wrapper => {
   wrapper.addEventListener('click', function () {
+    // Guard: prevent double-click creating multiple iframes
+    if (this.querySelector('iframe')) return;
     const videoId = this.getAttribute('data-videoid');
+    if (!videoId) return; // Guard: no video ID, do nothing
     const iframe = document.createElement('iframe');
     iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1`);
     iframe.setAttribute('frameborder', '0');
     iframe.setAttribute('allowfullscreen', '');
-    iframe.setAttribute('allow', 'autoplay; encrypted-media'); 
+    iframe.setAttribute('allow', 'autoplay; encrypted-media');
     this.innerHTML = '';
     this.appendChild(iframe);
   });
 });
-
+// ==================== END YOUTUBE LAZY LOAD ====================
