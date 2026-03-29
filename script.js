@@ -34,7 +34,7 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// ==================== GAME CATEGORY FILTER ====================
+// GAME CATEGORY FILTER 
 const subLinks = document.querySelectorAll('.sub-link');
 const gameCategories = document.querySelectorAll('.game-category');
 
@@ -54,7 +54,7 @@ function showCategory(selectedId) {
 gameCategories.forEach(cat => { cat.style.display = 'none'; });
 showCategory('indoor');
 
-// Sub-nav clicks
+
 subLinks.forEach(link => {
   link.addEventListener('click', function(e) {
     e.preventDefault();
@@ -64,7 +64,7 @@ subLinks.forEach(link => {
   });
 });
 
-// Dropdown link clicks
+
 document.querySelectorAll('.dropdown-link').forEach(link => {
   link.addEventListener('click', function(e) {
     e.preventDefault();
@@ -73,7 +73,7 @@ document.querySelectorAll('.dropdown-link').forEach(link => {
     document.getElementById('games').scrollIntoView({ behavior: 'smooth' });
   });
 });
-// ==================== END FILTER ====================
+// END FILTER 
 
 // Ticker
 const tickerEl = document.getElementById("tickerContent");
@@ -110,7 +110,7 @@ if (navigator.geolocation) {
 setInterval(updateTicker, 1000);
 updateTicker();
 
-// ==================== YOUTUBE LAZY LOAD ====================
+//  YOUTUBE LAZY LOAD 
 document.querySelectorAll('.yt-lazy').forEach(wrapper => {
   wrapper.addEventListener('click', function () {
     const videoId = this.getAttribute('data-videoid');
@@ -118,10 +118,9 @@ document.querySelectorAll('.yt-lazy').forEach(wrapper => {
     iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1`);
     iframe.setAttribute('frameborder', '0');
     iframe.setAttribute('allowfullscreen', '');
-    iframe.setAttribute('allow', 'autoplay; encrypted-media');
-    // Remove thumbnail and play button, insert iframe
+    iframe.setAttribute('allow', 'autoplay; encrypted-media'); 
     this.innerHTML = '';
     this.appendChild(iframe);
   });
 });
-// ==================== END YOUTUBE LAZY LOAD ====================
+
