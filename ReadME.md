@@ -92,10 +92,13 @@ This project helped strengthen my understanding of:
 
 Developed collaboratively as a Semester 1 Capstone Project.
 
-**Stanley Chukwu**
+**Chukwu Chukwuebuka Stanley**
 - GitHub: https://github.com/Dude-G
 - Email: stanchukwu389@gmail.com
 
+**Fortune Rohi**
+- Github: https://github.com/fortunerohi27-crypto
+- Email: fortunerohi27@gmail.com
 ---
 
 ## 📄 License
